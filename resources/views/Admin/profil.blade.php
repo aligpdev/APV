@@ -34,7 +34,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-xl-4">
+                    <!-- <div class="col-xl-4">
 						<div class="row">
 							<div class="col-xl-12">
 								<div class="card">
@@ -45,7 +45,7 @@
 													<a href="javascript:void(0);" class="btn btn-primary mb-1" data-bs-toggle="modal" data-bs-target="#sendMessageModal">Envoyer Message</a>
 												</div>
 											</div>
-											<!-- Modal -->
+
 											<div class="modal fade" id="sendMessageModal">
 												<div class="modal-dialog modal-dialog-centered" role="document">
 													<div class="modal-content">
@@ -90,8 +90,8 @@
 								</div>
 							</div>
 						</div>
-                    </div>
-                    <div class="col-xl-8">
+                    </div> -->
+                    <div class="col-xl-12">
                         <div class="card">
                             <div class="card-body">
                                 <div class="profile-tab">
@@ -99,11 +99,11 @@
                                         <ul class="nav nav-tabs">
                                             <li class="nav-item"><a href="#about-me" data-bs-toggle="tab" class="nav-link">A propos de moi</a>
                                             </li>
-                                            <li class="nav-item"><a href="#profile-settings" data-bs-toggle="tab" class="nav-link">Paramètres</a>
-                                            </li>
+                                            <!-- <li class="nav-item"><a href="#profile-settings" data-bs-toggle="tab" class="nav-link">Paramètres</a>
+                                            </li> -->
                                         </ul>
                                         <div class="tab-content">
-                                            <div id="about-me" class="tab-pane fade">
+                                            <div id="about-me">
 												<div class="pt-3">
 													<div class="profile-personal-info">
 														<h4 class="text-primary mb-4">Information Personnel</h4>
@@ -141,7 +141,7 @@
 													</div>
 												</div>
                                             </div>
-                                            <div id="profile-settings" class="tab-pane fade">
+                                            <div id="profile-settings">
                                                 <div class="pt-3">
                                                     <div class="settings-form">
                                                         <h4 class="text-primary">Paramètre du compte</h4>

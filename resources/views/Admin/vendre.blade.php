@@ -46,7 +46,7 @@
                                                 <select class="default-select form-control wide" name="idCategorie" required>
 													<option>Choisir une catégorie</option>
                                                     @foreach ($categories as $categorie)
-													<option value="{{$categorie->id}}">{{$categorie->libelle}}</option>
+													<option value="{{$categorie->id}}">{{$categorie->produit_categorie}}</option>
                                                     @endforeach
 												</select>
                                                 <div class="error"></div>

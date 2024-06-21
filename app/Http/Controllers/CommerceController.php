@@ -27,14 +27,14 @@ class CommerceController extends Controller
     // Créer un produit
     public function store_vente(Request $request)
     {
-      // Validez les données du formulaire
       $this->validate($request, [
-        'nom_produit' => 'required|string|max:255',
-        'prix_produit' => 'required|string',
-        'descript_produit' => 'required|string',
-        'produit_categorie' => 'required|string',
-        'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+          'nom_produit' => 'required|string|max:255',
+          'prix_produit' => 'required|string',
+          'descript_produit' => 'required|string',
+          'idCategorie' => 'required|exists:categories,id',
+          'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
       ]);
+
       $commerce = new Commerce();
       $commerce->nom_produit = $request->input('nom_produit');
       $commerce->prix_produit = $request->input('prix_produit');
@@ -43,14 +43,14 @@ class CommerceController extends Controller
       $commerce->user_id = Auth::user()->id;
 
       if ($request->hasFile('image')) {
-        $file_image= $request->file('image');
-        $file_name_image= "images".time().'_'.$file_image->getClientOriginalName();
-        $file_image-> move(public_path('articlesImages'), $file_name_image);
-        $commerce->image = $file_name_image;
+          $file_image = $request->file('image');
+          $file_name_image = time() . '_' . $file_image->getClientOriginalName();
+          $file_image->move(public_path('articlesImages'), $file_name_image);
+          $commerce->image = $file_name_image;
       }
-        // Enregistrez le modèle dans la base de données
-        $commerce->save();
-        return back()->with('success', 'Formulaire soumis avec succès.');
+
+      $commerce->save();
+      return back()->with('success', 'Produit ajouté avec succès.');
     }
 
 
@@ -75,13 +75,11 @@ class CommerceController extends Controller
       $request->validate([
         'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Validation de l'image
       ]);
-
       $commerce = Commerce::find($id);
 
       if (!$commerce) {
         return back()->with('error', 'Produit non trouvé');
       }
-
       // Gestion d'image
       if ($request->hasFile('image')) {
         $file_image= $request->file('image');
@@ -92,7 +90,7 @@ class CommerceController extends Controller
       // Mettez à jour les autres attributs de l'article en fonction de vos besoins
       $commerce->nom_produit = $request->input('nom_produit');
       $commerce->prix_produit = $request->input('prix_produit');
-      $commerce->produit_categorie = $request->input('produit_categorie');
+      $commerce->idCategorie = $request->input('idCategorie');
       $commerce->descript_produit = $request->input('descript_produit');
       $commerce->save();
       return back()->with('success', 'produit modifié avec succès');

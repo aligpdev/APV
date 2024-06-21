@@ -11,10 +11,11 @@
 								<div class="row">
 									<div class="col-lg-7 col-12">
 										<div class="hero-text">
-											<h1><span>Trouvez tous vos articles</span>Eshop name</h1>
-											<p>Bienvenue dans notre boutique en ligne <br> dapibus disting tloctio in the find it pereri <br> odiy maboriosm.</p>
+											<h1><span>Trouvez tous vos articles sur </span>Kakudaa</h1>
+											<p>Bienvenue dans notre boutique en ligne où chaque<br> visiteur est chaleureusement accueilli! Explorez <br>
+											 notre sélection soigneusement choisie d'articles.</p>
 											<div class="button">
-												<a href="#" class="btn">Achetez maitenant!</a>
+												<a href="#" class="btn btn-warning">Achetez maitenant!</a>
 											</div>
 										</div>
 									</div>
@@ -29,44 +30,144 @@
 
 
 <!-- premere section start  -->
-	<section class="small-banner section">
-		<div class="container-fluid">
+<section class="small-banner section">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="single-banner">
+                    <img src="client/assets/images/Q5.jpg" alt="#">
+                    <!-- <div class="content">
+                        <a href="#" style="display: inline-block; padding: 5px 10px; background-color: #007bff; color: #fff; text-decoration: none; border-radius: 10%; text-align: center; transition: background-color 0.3s ease;">infos</a>
+                    </div> -->
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="single-banner">
+                    <img src="client/assets/images/Q1.jpg" alt="#">
+                    <!-- <div class="content">
+                        <a href="#" style="display: inline-block; padding: 5px 10px; background-color: #007bff; color: #fff; text-decoration: none; border-radius: 10%; text-align: center; transition: background-color 0.3s ease;">infos</a>
+                    </div> -->
+                </div>
+            </div>
+            <div class="col-lg-4 col-12">
+                <div class="single-banner tab-height">
+                    <img src="client/assets/images/Q2.jpg" alt="#">
+                    <!-- <div class="content">
+						<a href="#" style="display: inline-block; padding: 5px 10px; background-color: #007bff; color: #fff; text-decoration: none; border-radius: 10%; text-align: center; transition: background-color 0.3s ease;">infos</a>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- premere section end -->
+
+
+	<!-- Categories Start -->
+	<section class="shop-home-list section" style="margin-top:30px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h2>Catégories</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- Start Single List -->
+                <div class="single-list">
+                    <div class="list-image">
+                        <img src="client/assets/images/montre.png" alt="#">
+                    </div>
+					<a href="#"><b>catégorie</b></a>
+                </div>
+                <!-- End Single List -->
+
+                <!-- Start Single List -->
+                <div class="single-list">
+                    <div class="list-image">
+                        <img src="client/assets/images/chemise.png" alt="#">
+                    </div>
+					<a href="#"><b>catégorie</b></a>
+                </div>
+                <!-- End Single List -->
+
+                <!-- Start Single List -->
+                <div class="single-list">
+                    <div class="list-image">
+                        <img src="client/assets/images/sandales.png" alt="#">
+                    </div>
+					<a href="#"><b>catégorie</b></a>
+                </div>
+                <!-- End Single List -->
+				 <!-- Start Single List -->
+				 <div class="single-list">
+                    <div class="list-image">
+                        <img src="client/assets/images/maquillage.png" alt="#">
+                    </div>
+					<a href="#"><b>catégorie</b></a>
+                </div>
+                <!-- End Single List -->
+
+                <!-- Start Single List -->
+                <div class="single-list">
+                    <div class="list-image">
+                        <img src="client/assets/images/ordinateur.png" alt="#">
+                    </div>
+					<a href="#"><b>catégorie</b></a>
+                </div>
+                <!-- End Single List -->
+
+                <!-- Start Single List -->
+                <div class="single-list">
+                    <div class="list-image">
+                        <img src="client/assets/images/electromenager.png" alt="#">
+                    </div>
+					<a href="#"><b>catégorie</b></a>
+                </div>
+                <!-- End Single List -->
+            </div>
+        </div>
+    </section>
+	<!-- Categories End -->
+
+
+	<!-- Start Bonus -->
+	<section class="shop-services section home">
+		<div class="container">
 			<div class="row">
-				<div class="col-lg-4 col-md-6 col-12">
-					<div class="single-banner">
-						<img src="https://via.placeholder.com/600x370" alt="#">
-							<div class="content">
-								<p>Nos qualités</p>
-								<h3>Nos services (1)</h3>
-								<a href="#">plus d'infos</a>
-							</div>
-						</div>
+				<div class="col-lg-3 col-md-6 col-12">
+					<div class="single-service">
+						<i class="ti-rocket"></i>
+						<h4>LIVRAISON GRATUITE</h4>
+						<p>plus de 500 € d'achat</p>
 					</div>
-					<div class="col-lg-4 col-md-6 col-12">
-						<div class="single-banner">
-							<img src="https://via.placeholder.com/600x370" alt="#">
-							<div class="content">
-								<p>Nos qualités</p>
-								<h3>Nos services (2)</h3>
-								<a href="#">plus d'infos</a>
-							</div>
-						</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-12">
+					<div class="single-service">
+						<i class="ti-reload"></i>
+						<h4>RETOUR GRATUIT</h4>
+						<p>Retours sous 30 jours</p>
 					</div>
-					<div class="col-lg-4 col-12">
-						<div class="single-banner tab-height">
-							<img src="https://via.placeholder.com/600x370" alt="#">
-							<div class="content">
-								<p>Nos qualités</p>
-								<h3>Nos services (3)</h3>
-								<a href="#">plus d'infos</a>
-							</div>
-						</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-12">
+					<div class="single-service">
+						<i class="ti-lock"></i>
+						<h4>PAIEMENT SECURISE</h4>
+						<p>100% paiement sécurisé</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-12">
+					<div class="single-service">
+						<i class="ti-tag"></i>
+						<h4>MEILLEURE PRIX</h4>
+						<p>prix garantis</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-<!-- premere section end -->
+<!-- End Bonus -->
 
 
 <!-- Articles en ventes Start -->
@@ -1333,210 +1434,24 @@
 <!-- Articles en ventes end -->
 
 
-<!-- Categories Start  -->
-	<section class="shop-home-list section">
-		<div class="container">
-			<div class="row">
-				<div class="col-12">
-					<div class="section-title">
-						<h2>Categories</h2>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-4 col-md-6 col-12">
-					<!-- Start Single List  -->
-					<div class="single-list">
-						<div class="row">
-							<div class="col-lg-6 col-md-6 col-12">
-								<div class="list-image overlay">
-									<img src="https://via.placeholder.com/115x140" alt="#">
-									<a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6 col-12 no-padding">
-								<div class="content">
-									<h5 class="title"><a href="#">Voir plus</a></h5>
-										<p class="price with-discount">Catégorie</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- End Single List  -->
-						<!-- Start Single List  -->
-						<div class="single-list">
-							<div class="row">
-								<div class="col-lg-6 col-md-6 col-12">
-									<div class="list-image overlay">
-										<img src="https://via.placeholder.com/115x140" alt="#">
-										<a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
-									</div>
-								</div>
-								<div class="col-lg-6 col-md-6 col-12 no-padding">
-									<div class="content">
-									<h5 class="title"><a href="#">Voir plus</a></h5>
-										<p class="price with-discount">Catégorie</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- End Single List  -->
-						<!-- Start Single List  -->
-						<div class="single-list">
-							<div class="row">
-								<div class="col-lg-6 col-md-6 col-12">
-									<div class="list-image overlay">
-										<img src="https://via.placeholder.com/115x140" alt="#">
-										<a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
-									</div>
-								</div>
-								<div class="col-lg-6 col-md-6 col-12 no-padding">
-									<div class="content">
-									<h5 class="title"><a href="#">Voir plus</a></h5>
-										<p class="price with-discount">Catégorie</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- End Single List  -->
-					</div>
-					<div class="col-lg-4 col-md-6 col-12">
-						<!-- Start Single List  -->
-						<div class="single-list">
-							<div class="row">
-								<div class="col-lg-6 col-md-6 col-12">
-									<div class="list-image overlay">
-										<img src="https://via.placeholder.com/115x140" alt="#">
-										<a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
-									</div>
-								</div>
-								<div class="col-lg-6 col-md-6 col-12 no-padding">
-									<div class="content">
-									<h5 class="title"><a href="#">Voir plus</a></h5>
-										<p class="price with-discount">Catégorie</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- End Single List  -->
-						<!-- Start Single List  -->
-						<div class="single-list">
-							<div class="row">
-								<div class="col-lg-6 col-md-6 col-12">
-									<div class="list-image overlay">
-										<img src="https://via.placeholder.com/115x140" alt="#">
-										<a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
-									</div>
-								</div>
-								<div class="col-lg-6 col-md-6 col-12 no-padding">
-									<div class="content">
-									<h5 class="title"><a href="#">Voir plus</a></h5>
-										<p class="price with-discount">Catégorie</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- End Single List  -->
-						<!-- Start Single List  -->
-						<div class="single-list">
-							<div class="row">
-								<div class="col-lg-6 col-md-6 col-12">
-									<div class="list-image overlay">
-										<img src="https://via.placeholder.com/115x140" alt="#">
-										<a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
-									</div>
-								</div>
-								<div class="col-lg-6 col-md-6 col-12 no-padding">
-									<div class="content">
-									<h5 class="title"><a href="#">Voir plus</a></h5>
-										<p class="price with-discount">Catégorie</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- End Single List  -->
-					</div>
-					<div class="col-lg-4 col-md-6 col-12">
-						<!-- Start Single List  -->
-						<div class="single-list">
-							<div class="row">
-								<div class="col-lg-6 col-md-6 col-12">
-									<div class="list-image overlay">
-										<img src="https://via.placeholder.com/115x140" alt="#">
-										<a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
-									</div>
-								</div>
-								<div class="col-lg-6 col-md-6 col-12 no-padding">
-									<div class="content">
-									<h5 class="title"><a href="#">Voir plus</a></h5>
-										<p class="price with-discount">Catégorie</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- End Single List  -->
-						<!-- Start Single List  -->
-						<div class="single-list">
-							<div class="row">
-								<div class="col-lg-6 col-md-6 col-12">
-									<div class="list-image overlay">
-										<img src="https://via.placeholder.com/115x140" alt="#">
-										<a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
-									</div>
-								</div>
-								<div class="col-lg-6 col-md-6 col-12 no-padding">
-									<div class="content">
-									<h5 class="title"><a href="#">Voir plus</a></h5>
-										<p class="price with-discount">Catégorie</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- End Single List  -->
-						<!-- Start Single List  -->
-						<div class="single-list">
-							<div class="row">
-								<div class="col-lg-6 col-md-6 col-12">
-									<div class="list-image overlay">
-										<img src="https://via.placeholder.com/115x140" alt="#">
-										<a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
-									</div>
-								</div>
-								<div class="col-lg-6 col-md-6 col-12 no-padding">
-									<div class="content">
-									<h5 class="title"><a href="#">Voir plus</a></h5>
-										<p class="price with-discount">Catégorie</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- End Single List  -->
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-<!-- Categories End  -->
-
-
 <!-- Publicité start  -->
 	<section class="midium-banner">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-md-6 col-12">
 					<div class="single-banner">
-						<img src="https://via.placeholder.com/600x370" alt="#">
+						<img src="client/assets/images/Q3.jpg" alt="#">
 						<div class="content">
-							<h3>Image publicitaire (1)</span></h3>
+							<!-- <h3>Image publicitaire 1</span></h3> -->
 							<a href="#">Contactez-nous</a>
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-6 col-md-6 col-12">
 					<div class="single-banner">
-						<img src="https://via.placeholder.com/600x370" alt="#">
+						<img src="client/assets/images/Q4.jpg" alt="#">
 						<div class="content">
-							<h3>Image publicitaire (2)</span></h3>
+							<!-- <h3>Image publicitaire 2</span></h3> -->
 							<a href="#">Contactez-nous</a>
 						</div>
 					</div>
@@ -1548,117 +1463,50 @@
 	
 
 <!-- Start Tous nos produits -->
-	<section>
-		<div class="product-area most-popular section">
-			<div class="container">
-				<div class="row">
-					<div class="col-12">
-						<div class="section-title">
-							<h2>Tous nos produits</h2>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12">
-						<div class="owl-carousel popular-slider">
-							<div class="single-product">
-								<div class="product-img">
-									<a href="#">
-										<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-										<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-										<span class="out-of-stock">Catégorie</span>
-									</a>
-									<div class="button-head">
-										<div class="product-action">
-											<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="ti-eye"></i><span>Voir details</span></a>
-										</div>
-										<div class="product-action-2">
-											<a title="Add to cart" href="#">Ajouter au panier</a>
-										</div>
-									</div>
-								</div>
-								<div class="product-content">
-									<h3><a href="#">Nom de l'article</a></h3>
-									<div class="product-price">
-										<span>200 €</span>
-									</div>
-								</div>
-							</div>
-							<div class="single-product">
-								<div class="product-img">
-									<a href="#">
-										<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-										<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-										<span class="out-of-stock">Catégorie</span>
-									</a>
-									<div class="button-head">
-										<div class="product-action">
-											<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="ti-eye"></i><span>Voir details</span></a>
-										</div>
-										<div class="product-action-2">
-											<a title="Add to cart" href="#">Ajouter au panier</a>
-										</div>
-									</div>
-								</div>
-								<div class="product-content">
-									<h3><a href="#">Nom de l'article</a></h3>
-									<div class="product-price">
-										<span>200 €</span>
-									</div>
-								</div>
-							</div>
-							<div class="single-product">
-								<div class="product-img">
-									<a href="#">
-										<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-										<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-										<span class="out-of-stock">Catégorie</span>
-									</a>
-									<div class="button-head">
-										<div class="product-action">
-											<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="ti-eye"></i><span>Voir details</span></a>
-										</div>
-										<div class="product-action-2">
-											<a title="Add to cart" href="#">Ajouter au panier</a>
-										</div>
-									</div>
-								</div>
-								<div class="product-content">
-									<h3><a href="#">Nom de l'article</a></h3>
-									<div class="product-price">
-										<span>200 €</span>
-									</div>
-								</div>
-							</div>
-							<div class="single-product">
-								<div class="product-img">
-									<a href="#">
-										<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-										<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-										<span class="out-of-stock">Catégorie</span>
-									</a>
-									<div class="button-head">
-										<div class="product-action">
-											<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="ti-eye"></i><span>Voir details</span></a>
-										</div>
-										<div class="product-action-2">
-											<a title="Add to cart" href="#">Ajouter au panier</a>
-										</div>
-									</div>
-								</div>
-								<div class="product-content">
-									<h3><a href="#">Nom de l'article</a></h3>
-									<div class="product-price">
-										<span>200 €</span>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+<section>
+    <div class="product-area most-popular section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h2>Tous nos produits</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="owl-carousel popular-slider">
+                        @foreach($commerce as $commerce)
+                        <div class="single-product">
+                            <div class="product-img">
+                                <a href="#">
+                                    <img class="default-img" src="{{ asset('/articlesImages/' . $commerce->image)}}" alt="#" style="width: 300px; height: 300px; object-fit: cover;">
+                                    <img class="hover-img" src="{{ asset('/articlesImages/' . $commerce->image)}}" alt="#" style="width: 300px; height: 300px; object-fit: cover;">
+                                    <span class="out-of-stock">Catégorie</span>
+                                </a>
+                                <div class="button-head">
+                                    <div class="product-action">
+                                        <a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="{{ route('DETAILS-PRODUIT', $commerce->id)}}"><i class="ti-eye"></i><span>Voir details</span></a>
+                                    </div>
+                                    <div class="product-action-2">
+                                        <a title="Add to cart" href="#">Ajouter au panier</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <h3><a href="#">{{ $commerce->nom_produit }}</a></h3>
+                                <div class="product-price">
+                                    <span>{{ $commerce->prix_produit}} €</span>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <!-- End Tous nos produits -->
 
 
@@ -1669,7 +1517,7 @@
 				<div class="row">
 					<div class="col-lg-6 col-12 padding-right">
 						<div class="image">
-							<img src="https://via.placeholder.com/750x590" alt="#">
+							<img src="client/assets/images/bonus.png" alt="#">
 						</div>	
 					</div>	
 					<div class="col-lg-6 col-12 padding-left">
@@ -1692,7 +1540,7 @@
 
 
 <!-- Start Blog  -->
-	<section class="shop-blog section">
+	<!-- <section class="shop-blog section">
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
@@ -1734,46 +1582,8 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> -->
 <!-- End Blog  -->
-
-
-<!-- Start Bonus -->
-	<section class="shop-services section home">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-3 col-md-6 col-12">
-					<div class="single-service">
-						<i class="ti-rocket"></i>
-						<h4>LIVRAISON GRATUITE</h4>
-						<p>plus de 500 € d'achat</p>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6 col-12">
-					<div class="single-service">
-						<i class="ti-reload"></i>
-						<h4>RETOUR GRATUIT</h4>
-						<p>Retours sous 30 jours</p>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6 col-12">
-					<div class="single-service">
-						<i class="ti-lock"></i>
-						<h4>PAIEMENT SECURISE</h4>
-						<p>100% paiement sécurisé</p>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6 col-12">
-					<div class="single-service">
-						<i class="ti-tag"></i>
-						<h4>MEILLEURE PRIX</h4>
-						<p>prix garantis</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-<!-- End Bonus -->
 
 
 <!-- Start Newsletter  -->
@@ -1813,7 +1623,7 @@
                         <div class="product-gallery">
                             <div class="quickview-slider-active">
                                 <div class="single-slider">
-                                    <img src="https://via.placeholder.com/569x528" alt="#">
+                                    <img src="{{ asset('/articlesImages/' . $commerce->image) }}" alt="#">
                                 </div>
                                 <div class="single-slider">
                                     <img src="https://via.placeholder.com/569x528" alt="#">
@@ -1829,7 +1639,7 @@
                     </div>
                     <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
                         <div class="quickview-content">
-                            <h2>Nom de l'article</h2>
+                            <h2>{{ $commerce->nom_produit }}</h2>
                             <div class="quickview-ratting-review">
                                 <div class="quickview-ratting-wrap">
                                     <div class="quickview-ratting">
@@ -1844,9 +1654,9 @@
                                     <span><i class="fa fa-check-circle-o"></i> catégorie</span>
                                 </div>
                             </div>
-                            <h3>100 €</h3>
+                            <h3>{{ $commerce->prix_produit }} €</h3>
                             <div class="quickview-peragraph">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia iste laborum ad impedit pariatur esse optio tempora sint ullam autem deleniti nam in quos qui nemo ipsum numquam.</p>
+                                <p style="word-wrap: break-word; word-break: break-word; max-width: 100%; white-space: pre-line;">{{ $commerce->descript_produit }}</p>
                             </div>
                             <div class="quantity">
                                 <div class="input-group">

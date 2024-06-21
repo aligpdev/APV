@@ -27,7 +27,7 @@ class AuthController extends Controller
     }
     
     /*S'INSCRIRE*/
-    public function create(request $request)
+    public function create_account(request $request)
     {
         $request->validate([
             'nom' => 'required',
@@ -35,6 +35,7 @@ class AuthController extends Controller
             'telephone' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:6|max:12',
+            'role' => 'required|in:ADMIN,VENDEUR,USER', // validation pour le rôle
         ]);
         /*SI LE FORMULAIRE EST VALIDE, ENREGISTRER UN NOUVEL UTILISATEUR*/
         $user = new User();
@@ -42,13 +43,14 @@ class AuthController extends Controller
         $user->prenom = $request->prenom;
         $user->email = $request->email;
         $user->telephone = $request->telephone;
-        $user->role = 'USER';
+        $user->role = $request->role; // role provenant du formulaire
+        // $user->role = 'USER';
         $user->password = Hash::make($request->password);
         $user->save();
         if ($user) {
-            return redirect()->route('page-login')->with('success', 'Votre formulaire à été enregistré avec succès');
+            return redirect()->route('page-login')->with('success', 'Votre compte a été créé avec succès');
         } else {
-            return back()->with('Echec', 'Email ou mot de passe incorrect');
+            return back()->with('Echec', 'Erreur lors de la création du compte');
         }
     }
 
@@ -80,7 +82,7 @@ class AuthController extends Controller
             Session()->pull('UserRole');
             // dd(Session::get('UserName'));
             Auth::guard('web')->logout();
-            return redirect()->route('page-login')->with('deconnecté');
+            return redirect()->route('page-login')->with('success', 'Déconnexion réussie');
         }
     }
 
@@ -94,18 +96,32 @@ class AuthController extends Controller
 
     //LISTES VENDEURS
     public function voir_vendeurs(){
-        $users  = user::all();
+        $users = User::where('role', 'VENDEUR')->get();
+        // $users  = user::all();
         return view('Admin.vendeurs', compact('users'));
     }
+
+
+    // SUPPRIMER VENDEURS
+    // public function delete_vendeurs($id)
+    // {
+    //     $user = User::find($id);
+    //     if (!$user) {
+    //     return back()->with('error', 'Le vendeur n\'existe pas.');
+    //     }
+    //     $user->delete();
+    //     return back()->with("success", "Vendeur supprimé");
+    // }
+
     // SUPPRIMER VENDEURS
     public function delete_vendeurs($id)
     {
         $user = User::find($id);
-        if (!$user) {
-        return back()->with('error', 'Le vendeur n\'existe pas.');
+        if (!$user || $user->role !== 'ADMIN') {
+            return back()->with('error', 'Le vendeur n\'existe pas.');
         }
         $user->delete();
-        return back()->with("success", "Vendeur supprime");
+        return back()->with("success", "Vendeur supprimé");
     }
 
 }

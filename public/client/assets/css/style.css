@@ -1214,7 +1214,7 @@ Version:1.0
 }
 .hero-slider .single-slider {
 	height: auto;
-	background-image: url('https://via.placeholder.com/1900x700');
+	background-image: url('../images/BAN3.jpg');
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -1238,12 +1238,12 @@ Version:1.0
 	font-size: 20px;
 	display: block;
 	margin-bottom: 12px;
-	color: #333;
+	color: #beb9b9;
 	font-weight: 700;
 	line-height: initial;
 }
 .hero-slider .hero-text p {
-	color: #333;
+	color: #beb9b9;
 	margin-bottom: 35px;
 }
 .hero-slider .hero-text .button{
@@ -1251,7 +1251,7 @@ Version:1.0
 }
 .hero-slider .hero-text .btn {
 	color: #fff;
-	background: #333;
+	background: #F7941D;
 	padding: 13px 30px;
 	line-height: initial;
 	border: none;

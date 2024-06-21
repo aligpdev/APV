@@ -11,7 +11,7 @@
 	<!-- Title Tag  -->
   <title>KAKUDAA - site officiel</title>
 	<!-- Favicon -->
-	<link rel="icon" type="image/png" href="client/assets/images/favicon.png">
+	<link rel="icon" type="image/png" href="client/assets/images/favicon_B.png">
 	<!-- Web Font -->
 	<link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
 	<!-- StyleSheet -->
@@ -40,6 +40,54 @@
 	<link rel="stylesheet" href="client/assets/css/reset.css">
 	<link rel="stylesheet" href="client/assets/css/style.css">
   <link rel="stylesheet" href="client/assets/css/responsive.css">
+  <style>
+        .shop-home-list .row {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin-left: -15px;
+            margin-right: -15px;
+            padding-bottom: 20px; /* Pour un peu d'espace en bas */
+        }
+
+        .shop-home-list .single-list {
+            flex: 0 0 auto;
+            width: 33.333%;
+            max-width: 33.333%;
+            padding: 0 15px;
+            box-sizing: border-box;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .shop-home-list .list-image {
+            border-radius: 50%;
+            width: 115px;
+            height: 115px;
+            overflow: hidden;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .shop-home-list .list-image img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius:
+
+        .shop-home-list .buy {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: #fff;
+            color: #333;
+            padding: 5px;
+            border-radius: 50%;
+            font-size: 16px;
+            text-decoration: none; /* Pour enlever le soulignement du lien */
+        }
+    </style>
 	
 </head>
 
@@ -135,7 +183,7 @@
                 <div class="col-lg-3">
                   <div class="all-category">
                     <h3 class="cat-heading">
-                    <i class="fa fa-bars" aria-hidden="true"></i>ESHOP NAME</h3>
+                    <i class="fa fa-bars" aria-hidden="true"></i>CATEGORIES</h3>
                   </div>
                 </div>
                 <div class="col-lg-9 col-12">

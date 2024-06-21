@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nom_produit');
             $table->string('prix_produit');
             $table->string('descript_produit');
-            $table->string('produit_categorie');
+            $table->string('idCategorie');
             $table->string('image');
             $table->timestamps();
             $table->integer('user_id');

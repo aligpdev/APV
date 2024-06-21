@@ -13,11 +13,16 @@ class Commerce extends Model
         'nom_produit',
         'prix_produit',
         'descript_produit',
-        'produit_categorie',
+        'idCategorie',
         'image',
         'user_id'
     ];
 
+
+    public function categorie()
+    {
+        return $this->belongsTo(Categorie::class, 'idCategorie');
+    }
     
     public function comments(){
         return $this->hasMany(Commentaire::class)->with('user');

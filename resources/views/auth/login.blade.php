@@ -14,7 +14,7 @@
 	<meta property="og:image" content="social-image.png"/>
 	<meta name="format-detection" content="telephone=no">
 	<!-- PAGE TITLE HERE -->
-	<title>KAKUDAA - Admin</title>
+	<title>KAKUDAA - Connexion</title>
 	<!-- FAVICONS ICON -->
 	<link rel="shortcut icon" type="image/png" href="admin/assets/images/favicon.png"/>
 	<link href="admin/assets/vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
@@ -23,7 +23,7 @@
 </head>
 
 <body class="vh-100">
-    <div class="authincation h-100">
+    <div class="authincation h-100" style="font-family: Arial, sans-serif; background-color: #ffd482;">
         <div class="container h-100">
             <div class="row justify-content-center h-100 align-items-center">
                 <div class="col-md-6">
@@ -79,13 +79,15 @@
                                                 <a href="{{route('FORGOT')}}">Mot de passe oublié?</a>
                                             </div>
                                         </div>
-                                        <div class="text-center">
-                                            <button type="submit" class="btn btn-primary btn-block">Se connecter</button>
+                                        <div style="text-align: center;">
+                                            <button type="submit" style="background-color: #5cb85c; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">
+                                                Se connecter
+                                            </button>
+                                        </div>
+                                        <div style="text-align: center; margin-top: 15px;">
+                                            <a href="{{ route('page-register') }}" style="color: #5cb85c; text-decoration: none;">Vous n'avez pas de compte? S'inscrire</a>
                                         </div>
                                     </form>
-                                    <div class="new-account mt-3">
-                                        <p class="mb-0 mb-sm-3">Vous n'avez pas de compte? <a class="text-primary" href="{{route('page-register')}}">S'inscrire'</a></p>
-                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -14,7 +14,7 @@ class BackendController extends Controller
         $nosproduits = Commerce::all()->where('user_id', Auth::user()->id)->count();
         $totalproduits = Commerce::all()->count();
         $totalvendeurs = User::all()->count();
-        return view('Admin.tableau', ['totalvendeurs'=>$totalvendeurs, 'nosproduits'=>$nosproduits, 'totalvendeurs'=>$totalvendeurs]);
+        return view('Admin.tableau', ['totalvendeurs'=>$totalvendeurs, 'nosproduits'=>$nosproduits, 'totalproduits'=>$totalproduits]);
     }
 
     public function voir_commandes(){

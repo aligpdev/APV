@@ -18,12 +18,12 @@ class CategorieController extends Controller
      {
          // Validation des données
          $request->validate([
-             'libelle' => 'required|string|max:255',
+             'produit_categorie' => 'required|string|max:255',
          ]);
  
          // Création d'une nouvelle catégorie
          $categorie = new Categorie();
-         $categorie->libelle = $request->input('libelle');
+         $categorie->produit_categorie = $request->input('produit_categorie');
  
          // Sauvegarde de la catégorie
          $categorie->save();

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Commerce;
+use Illuminate\Support\Facades\Storage;
 
 class FrontendController extends Controller
 {
@@ -12,11 +14,18 @@ class FrontendController extends Controller
 |--------------------------------------------------------------------------
 */
 
+    // Accéder a la page details d'un produit
+    public function details_produit(Commerce $commerce){
+        return view('Client.details', compact('commerce'));
+    }
+    
     // Accéder à la page d'accueil
     public function home()
     {
-        return view('Client.home');
+        $commerce  = Commerce::all();
+        return view('Client.home', compact('commerce'));
     }
+
 
     // Accéder à la page boutique
     public function shop()

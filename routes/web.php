@@ -10,9 +10,6 @@ use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\PubliciteController;
 use App\Http\Controllers\CategorieController;
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 
 /*
 |--------------------------------------------------------------------------
@@ -20,18 +17,17 @@ use App\Http\Controllers\CategorieController;
 |--------------------------------------------------------------------------
 */
 Route::get('/', [FrontendController::class, 'home'])->name('ACCUEIL');
+Route::get('/details/{id}', [FrontendController::class, 'details_produit'])->name('DETAILS-PRODUIT');
 Route::get('/boutique', [FrontendController::class, 'shop'])->name('BOUTIQUE');
 Route::get('/blog', [FrontendController::class, 'view_blog'])->name('BLOG');
 Route::get('/contact', [FrontendController::class, 'info'])->name('CONTACT');
 Route::get('/panier', [FrontendController::class, 'buy'])->name('PANIER');
 Route::get('/paiement', [FrontendController::class, 'checkout'])->name('PAYER');
+// Route::get('/detailsproduit/{commerce}', function (Commerce $commerce) {
+//     return view('Client.home', compact('commerce'));
+// })->name('DETAILS-PRODUIT');
 // Route::get('/newsletter', [NewsletterController::class, 'showNewsletter'])->name("voir-newsletter");
 // Route::post('/sendarticles', [NewsletterController::class, 'createNewsletter'])->name('send-newsletter');
-// Route::get('/about', [Controller::class, 'about_us'])->name("apropos");
-// Route::get('/detailsarticle/{article}', function (Article $article) {
-//     return view('pagesclient.detailsarticle', compact('article'));
-// })->name('shopdetails');
-
 
 /*
 |--------------------------------------------------------------------------
@@ -40,10 +36,16 @@ Route::get('/paiement', [FrontendController::class, 'checkout'])->name('PAYER');
 */
 Route::get('/login', [AuthController::class, 'connexion'])->name('page-login');
 Route::get('/register', [AuthController::class, 'inscription'])->name('page-register');
-Route::post('/create', [AuthController::class, 'create'])->name("NEWUSER");
+Route::post('/newuser', [AuthController::class, 'create_account'])->name("NEWUSER");
 Route::post('/checkuser', [AuthController::class, 'check_user'])->name("AUTHLOGIN");
 Route::get('/logout', [AuthController::class, 'logout'])->name("LOGOUT");
 Route::get('/forgot', [AuthController::class, 'check_password'])->name('FORGOT');
+
+// Route::get('login', [AuthController::class, 'connexion'])->name('page-login');
+// Route::get('register', [AuthController::class, 'inscription'])->name('page-register');
+// Route::post('register', [AuthController::class, 'create'])->name('register');
+// Route::post('login', [AuthController::class, 'check_user'])->name('login');
+// Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 
 
 /*
@@ -51,7 +53,7 @@ Route::get('/forgot', [AuthController::class, 'check_password'])->name('FORGOT')
 | BACKEND ROUTES
 |--------------------------------------------------------------------------
 */
-Route::middleware('auth', 'verified', 'CacheControl')->group(function(){
+Route::middleware('auth','verified', 'CacheControl')->group(function(){
     //Tableau de bord
     Route::get('/tableau', [BackendController::class, 'dashboard'])->name('TABLEAU');
     //Afficher commandes back
@@ -78,21 +80,15 @@ Route::middleware('auth', 'verified', 'CacheControl')->group(function(){
     Route::delete('/SupprimerVendeur/{id}', [AuthController::class, 'delete_vendeurs'])->name('SUPP-VENDEURS');
     //Profil UTILISATEURS back
     Route::get('/profil', [ProfilController::class, 'voir_profil'])->name('PROFIL');
-    //Modifié mon PROFIL UTILISATEURS back
-    // Route::put('/profil/{id}', [AuthController::class, 'update_profil'])->name('MODIFIER-PROFIL');
     //Afficher CATEGORIES back
     Route::get('/categorie', [CategorieController::class, 'voir_categories'])->name('VOIR-CATEGORIE');
     //Créer CATEGORIES back
     Route::post('/ajouter-categorie', [CategorieController::class, 'store_categorie'])->name('CREER-CATEGORIE');
+    //Modifié mon PROFIL UTILISATEURS back
+    // Route::put('/profil/{id}', [AuthController::class, 'update_profil'])->name('MODIFIER-PROFIL');
 
 
 
-    // Routes Afficher mes Trocs
-    Route::get('/utilisateurs', [CommerceController::class, 'show'])->name('SERVICES');
     //Supprimer mes messages
     Route::delete('/SupprimerSms/{id}', [MessagerieController::class, 'destroySms'])->name('deleteMessage');
-
-    Route::get('/gallery', [AdminController::class, 'gallery'])->name('images');
-    Route::get('/maps', [AdminController::class, 'maps'])->name('maps');
-
 });

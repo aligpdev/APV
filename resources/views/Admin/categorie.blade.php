@@ -35,7 +35,7 @@
 												<form action="{{ route('CREER-CATEGORIE') }}" method="POST">
 													@csrf
 													<div class="mb-3">
-														<input class="form-control" type="text" name="libelle" placeholder="saisissez le nom de la catégorie" required>
+														<input class="form-control" type="text" name="produit_categorie" placeholder="saisissez le nom de la catégorie" required>
 													</div>
 													<div class="modal-footer">
 														<button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Fermer</button>
@@ -53,7 +53,7 @@
                                     <ul class="list-group">
 										@foreach($categories as $categorie)
                                         <li class="list-group-item d-flex justify-content-between align-items-center"value="{{$categorie->id}}">
-											{{$categorie->libelle}}
+											{{$categorie->produit_categorie}}
 											<div class="d-flex">
 												<a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
 											</div>

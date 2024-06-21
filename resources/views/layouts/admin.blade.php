@@ -27,6 +27,8 @@
 	<link href="admin/assets/vendor/datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
 	<link href="admin/assets/vendor/swiper/css/swiper-bundle.min.css" rel="stylesheet">
     <link href="admin/assets/css/style.css" rel="stylesheet">
+	<!-- Sweet alert -->
+	<link href="admin/assets/vendor/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet">
 
 </head>
 
@@ -300,9 +302,7 @@
 					</a>
 				</div>
 				<ul class="metismenu" id="menu">
-					<!-- @if(Session::get('UserRole') == "ROOT")
-					@else
-					@endif -->
+					@if(Session::get('UserRole') == "ADMIN")
                     <li>
 						<a href="{{route('TABLEAU')}}" aria-expanded="false">
 							<i class="flaticon-025-dashboard"></i>
@@ -310,14 +310,10 @@
 						</a>
                     </li>
 					<li>
-						<a class="has-arrow" href="javascript:void()" aria-expanded="false">
-							<i class="flaticon-022-copy"></i>
+						<a href="{{route('VOIR-PRODUITS')}}" aria-expanded="false">
+						<i class="flaticon-022-copy"></i>
 							<span class="nav-text">Gestion des produits</span>
 						</a>
-						<ul aria-expanded="false">
-							<li><a href="{{route('AJOUTER-PRODUIT')}}">vendre un produit</a></li>
-							<li><a href="{{route('VOIR-PRODUITS')}}">voir mes produits</a></li>
-						</ul>
                     </li>
 					<li>
 						<a href="{{route('VOIR-VENDEURS')}}" aria-expanded="false">
@@ -337,25 +333,25 @@
 							<span class="nav-text">Publicités</span>
 						</a>
                     </li>
-					<li>
+					<!-- <li>
 						<a href="{{route('COMMANDES')}}" aria-expanded="false">
 							<i class="flaticon-381-newspaper"></i>
 							<span class="nav-text">Commandes reçus</span>
 						</a>
-                    </li>
-					<li>
+                    </li> -->
+					<!-- <li>
 						<a href="{{route('FACTURE')}}" aria-expanded="false">
 							<i class="flaticon-072-printer"></i>
 							<span class="nav-text">Reçu de paiement</span>
 						</a>
-                    </li>
+                    </li> -->
 					<li>
 						<a href="{{route('PROFIL')}}" aria-expanded="false">
 							<i class="flaticon-381-user-9"></i>
 							<span class="nav-text">Profil</span>
 						</a>
                     </li>
-                    <li>
+                    <!-- <li>
 						<a class="has-arrow" href="javascript:void()" aria-expanded="false">
 							<i class="flaticon-022-copy"></i>
 							<span class="nav-text">Pages</span>
@@ -363,13 +359,52 @@
                         <ul aria-expanded="false">
 							<li><a href="{{route('FORGOT')}}">Mot de passe oublié</a></li>
 						</ul>
-                    </li>
+                    </li> -->
 					<li>
 						<a href="{{route('LOGOUT')}}" aria-expanded="false">
 							<i class="ti-power-off"></i>
 							<span class="nav-text">Déconnecter</span>
 						</a>
                     </li>
+					@else
+					<li>
+						<a href="{{route('TABLEAU')}}" aria-expanded="false">
+							<i class="flaticon-025-dashboard"></i>
+							<span class="nav-text">Tableau de bord</span>
+						</a>
+                    </li>
+					<li>
+						<a class="has-arrow" href="javascript:void()" aria-expanded="false">
+							<i class="flaticon-022-copy"></i>
+							<span class="nav-text">Gestion des produits</span>
+						</a>
+						<ul aria-expanded="false">
+							<li><a href="{{route('AJOUTER-PRODUIT')}}">vendre un produit</a></li>
+							<li><a href="{{route('VOIR-PRODUITS')}}">voir mes produits</a></li>
+						</ul>
+                    </li>
+					<li>
+						<a href="{{route('PROFIL')}}" aria-expanded="false">
+							<i class="flaticon-381-user-9"></i>
+							<span class="nav-text">Profil</span>
+						</a>
+                    </li>
+                    <!-- <li>
+						<a class="has-arrow" href="javascript:void()" aria-expanded="false">
+							<i class="flaticon-022-copy"></i>
+							<span class="nav-text">Pages</span>
+						</a>
+                        <ul aria-expanded="false">
+							<li><a href="{{route('FORGOT')}}">Mot de passe oublié</a></li>
+						</ul>
+                    </li> -->
+					<li>
+						<a href="{{route('LOGOUT')}}" aria-expanded="false">
+							<i class="ti-power-off"></i>
+							<span class="nav-text">Déconnecter</span>
+						</a>
+                    </li>
+					@endif
                 </ul>
 				<div class="copyright">
 					<h6>Eshop - admin<span class="fs-14 font-w400">© 2024 All Rights Reserved</span></h6>
