@@ -13,9 +13,10 @@ class CategorieController extends Controller
         return view('Admin.categorie', compact('categories'));
     }
 
-     // Ajouter une categorie
-     public function store_categorie(Request $request)
-     {
+
+    // Ajouter une categorie
+    public function store_categorie(Request $request)
+    {
          // Validation des données
          $request->validate([
              'produit_categorie' => 'required|string|max:255',
@@ -30,5 +31,22 @@ class CategorieController extends Controller
  
          // Redirection avec message de succès
          return redirect()->route('VOIR-CATEGORIE')->with('success', 'Catégorie ajoutée avec succès');
-     }
+    }
+
+
+    // Supprimer une catégorie
+    public function delete_categorie($id)
+    {
+        $categorie = Categorie::find($id);
+
+        if (!$categorie) {
+            return back()->with('error', 'La catégorie n\'existe pas.');
+        }
+
+        // Suppression de la catégorie
+        $categorie->delete();
+
+        return back()->with('success', 'Catégorie supprimée avec succès.');
+    }
+
 }

@@ -55,21 +55,15 @@
                                                 <button type="button" class="btn btn-primary shadow btn-xs sharp me-1" data-toggle="modal" data-target="#modal{{ $commerce->id }}">
                                                 <i class="fas fa-pencil-alt"></i>
                                                 </button>
-
                                                 
-                                                <!-- <form id="form-{{ $commerce->id }}" action="{{ route('SUPP-PRODUIT', $commerce->id) }}" method="POST">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button onclick="confirmDelete('{{$commerce->id}}')" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></button>
-                                                </form> -->
                                                 <div class="remove">
                                                     <button class="btn btn-sm btn-danger btn-xs sharp" onclick="confirmDelete('{{ $commerce->id }}')">
                                                         <i class="fa fa-trash"></i>
                                                     </button>
-                                                        <form id="form-{{ $commerce->id }}" action="{{route('SUPP-PRODUIT', $commerce->id) }}" method="post">
-                                                            @csrf
-                                                            @method('DELETE')
-                                                        </form>
+                                                    <form id="form-{{ $commerce->id }}" action="{{route('SUPP-PRODUIT', $commerce->id) }}" method="post">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                    </form>
                                                 </div>
                                             </div>
                                         </td>
@@ -94,9 +88,16 @@
                                                             <input type="text" class="form-control" id="nom_produit{{ $commerce->id }}" name="nom_produit" value="{{ $commerce->nom_produit }}">
                                                         </div>
                                                         <div class="form-group">
-                                                            <label for="produit_categorie{{ $commerce->id }}">Catégorie</label>
-                                                            <input type="text" class="form-control" id="produit_categorie{{ $commerce->id }}" name="produit_categorie" value="{{ $commerce->produit_categorie }}">
+                                                            <label for="idCategorie{{ $commerce->id }}">Catégorie</label>
+                                                            <select class="form-control" id="idCategorie{{ $commerce->id }}" name="idCategorie">
+                                                                @foreach($categories as $categorie)
+                                                                    <option value="{{ $categorie->id }}" {{ $commerce->idCategorie == $categorie->id ? 'selected' : '' }}>
+                                                                        {{ $categorie->produit_categorie }}
+                                                                    </option>
+                                                                @endforeach
+                                                            </select>
                                                         </div>
+
                                                         <div class="form-group">
                                                             <label for="descript_produit{{ $commerce->id }}">Description</label>
                                                             <textarea class="form-control" id="descript_produit{{ $commerce->id }}" name="descript_produit">{{ $commerce->descript_produit }}</textarea>

@@ -84,6 +84,8 @@ Route::middleware('auth','verified', 'CacheControl')->group(function(){
     Route::get('/categorie', [CategorieController::class, 'voir_categories'])->name('VOIR-CATEGORIE');
     //Créer CATEGORIES back
     Route::post('/ajouter-categorie', [CategorieController::class, 'store_categorie'])->name('CREER-CATEGORIE');
+    //Supprimer CATEGORIES
+    Route::delete('/SupprimerCategorie/{id}', [CategorieController::class, 'delete_categorie'])->name('SUPP-CATEGORIE');
     //Modifié mon PROFIL UTILISATEURS back
     // Route::put('/profil/{id}', [AuthController::class, 'update_profil'])->name('MODIFIER-PROFIL');
 

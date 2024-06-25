@@ -20,12 +20,14 @@ class AuthController extends Controller
         return view('auth.login');
     }
 
+
     // Page d'inscription
     public function inscription(request $request)
     {
         return view('auth.register');
     }
     
+
     /*S'INSCRIRE*/
     public function create_account(request $request)
     {
@@ -53,6 +55,7 @@ class AuthController extends Controller
             return back()->with('Echec', 'Erreur lors de la création du compte');
         }
     }
+
 
     /*SE CONNECTER*/
     public function check_user(request $request)
@@ -103,25 +106,25 @@ class AuthController extends Controller
 
 
     // SUPPRIMER VENDEURS
-    // public function delete_vendeurs($id)
-    // {
-    //     $user = User::find($id);
-    //     if (!$user) {
-    //     return back()->with('error', 'Le vendeur n\'existe pas.');
-    //     }
-    //     $user->delete();
-    //     return back()->with("success", "Vendeur supprimé");
-    // }
-
-    // SUPPRIMER VENDEURS
     public function delete_vendeurs($id)
     {
+        // Vérifier d'abord si l'utilisateur connecté est un administrateur
+        if (Session::get('UserRole') !== 'ADMIN') {
+            return back()->with('error', 'Vous n\'êtes pas autorisé à effectuer cette action.');
+        }
+
+        // Récupérer l'utilisateur à supprimer
         $user = User::find($id);
-        if (!$user || $user->role !== 'ADMIN') {
+
+        // Vérifier si l'utilisateur existe et s'il est un vendeur
+        if (!$user || $user->role !== 'VENDEUR') {
             return back()->with('error', 'Le vendeur n\'existe pas.');
         }
+
+        // Supprimer l'utilisateur
         $user->delete();
-        return back()->with("success", "Vendeur supprimé");
+
+        return back()->with("success", "Vendeur supprimé avec succès.");
     }
 
 }

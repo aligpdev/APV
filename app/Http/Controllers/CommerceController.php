@@ -12,17 +12,19 @@ class CommerceController extends Controller
 {
 
     // Page de formulaire de vente
-    public function ajouter_produit(){
-      $categories = Categorie::all();
-      return view('Admin.vendre', compact('categories'));
-    }
-
-    // Voir mes produits
     public function voir_produits() {
       $categories = Categorie::all();
-      $commerce = Commerce::with('categorie')->where("user_id", Auth::user()->id)->get();
+      
+      if (Auth::user()->role === 'ADMIN') {
+          // Si l'utilisateur a le rôle "ADMIN", afficher tous les produits
+          $commerce = Commerce::with('categorie')->get();
+      } else {
+          // Sinon, afficher uniquement les produits de l'utilisateur connecté
+          $commerce = Commerce::with('categorie')->where('user_id', Auth::user()->id)->get();
+      }
+  
       return view('Admin.listproduits', compact('commerce', 'categories'));
-  }
+    }
 
 
     // Créer un produit
@@ -72,29 +74,34 @@ class CommerceController extends Controller
 
     // Mettre à jour un Produit
     public function update_produit(Request $request, $id)
-    {
-      $request->validate([
+{
+    $request->validate([
         'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Validation de l'image
-      ]);
-      $commerce = Commerce::find($id);
+    ]);
 
-      if (!$commerce) {
+    $commerce = Commerce::find($id);
+
+    if (!$commerce) {
         return back()->with('error', 'Produit non trouvé');
-      }
-      // Gestion d'image
-      if ($request->hasFile('image')) {
-        $file_image= $request->file('image');
-        $file_name_image= "images".time().'_'.$file_image->getClientOriginalName();
-        $file_image-> move(public_path('articlesImages'), $file_name_image);
-        $commerce->image = $file_name_image;
-      }
-      // Mettez à jour les autres attributs de l'article en fonction de vos besoins
-      $commerce->nom_produit = $request->input('nom_produit');
-      $commerce->prix_produit = $request->input('prix_produit');
-      $commerce->idCategorie = $request->input('idCategorie');
-      $commerce->descript_produit = $request->input('descript_produit');
-      $commerce->save();
-      return back()->with('success', 'produit modifié avec succès');
     }
+
+    // Gestion de l'image
+    if ($request->hasFile('image')) {
+        $file_image = $request->file('image');
+        $file_name_image = "images".time().'_'.$file_image->getClientOriginalName();
+        $file_image->move(public_path('articlesImages'), $file_name_image);
+        $commerce->image = $file_name_image;
+    }
+
+    // Mettez à jour les autres attributs de l'article en fonction de vos besoins
+    $commerce->nom_produit = $request->input('nom_produit');
+    $commerce->prix_produit = $request->input('prix_produit');
+    $commerce->idCategorie = $request->input('idCategorie');
+    $commerce->descript_produit = $request->input('descript_produit');
+    $commerce->save();
+
+    return back()->with('success', 'Produit modifié avec succès');
+}
+
 
 }

@@ -55,7 +55,13 @@
                                         <li class="list-group-item d-flex justify-content-between align-items-center"value="{{$categorie->id}}">
 											{{$categorie->produit_categorie}}
 											<div class="d-flex">
-												<a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                <button class="btn btn-danger shadow btn-xs sharp" onclick="confirmDelete({{ $categorie->id }})">
+                                                    <i class="fa fa-trash"></i>
+                                                </button>
+                                                <form id="delete-form-{{ $categorie->id }}" action="{{ route('SUPP-CATEGORIE', $categorie->id) }}" method="POST" style="display: none;">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                </form>
 											</div>
                                         </li>
 										@endforeach
@@ -72,7 +78,25 @@
         ***********************************-->
  @endsection
 
-@section('scripts')
+ @section('scripts')
+<script>
+    function confirmDelete(idCategorie) {
+        Swal.fire({
+            title: 'Êtes-vous sûr?',
+            text: 'Cette action est irréversible!',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Oui, supprimer!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Soumettre le formulaire de suppression
+                document.getElementById('delete-form-' + idCategorie).submit();
+            }
+        });
+    }
+</script>
 @if(Session::has('success'))
 <script>
     toastr.success("{{ Session::get('success') }}", "Succès", {
@@ -81,7 +105,7 @@
         progressBar: true,
         timeOut: 5000,
         extendedTimeOut: 2000,
-        tapToDismiss: false, // Optionnel : empêche la fermeture en cliquant sur la notification
+        tapToDismiss: false,
     });
 </script>
 @endif
