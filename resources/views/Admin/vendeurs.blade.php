@@ -33,13 +33,13 @@
                                         <tbody>
                                             @foreach($users as $user)
                                             <tr>
-                                                <div class="results">
+                                                <!-- <div class="results">
                                                     @if(Session::get('success'))
                                                         <div class="alert alert-success">
                                                             {{ Session::get('success') }}
                                                         </div>
                                                     @endif
-                                                </div>
+                                                </div> -->
                                                 <td>
 													<div class="d-flex align-items-center">
 														<img src="images/avatar/1.jpg" class="rounded-lg me-2" width="24" alt=""/>
@@ -71,4 +71,19 @@
         <!--**********************************
             Content body end
         ***********************************-->
+@endsection
+
+@section('scripts')
+@if(Session::has('success'))
+<script>
+    toastr.success("{{ Session::get('success') }}", "Succès", {
+        positionClass: "toast-top-right",
+        closeButton: true,
+        progressBar: true,
+        timeOut: 5000,
+        extendedTimeOut: 2000,
+        tapToDismiss: false, // Optionnel : empêche la fermeture en cliquant sur la notification
+    });
+</script>
+@endif
 @endsection

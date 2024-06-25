@@ -46,7 +46,7 @@
                                         </a>
                                     </div>
 
-                                    <h4 class="text-center mb-4" style="text-transform: italic;">Créer un compte vendeur chez nous!</h4>
+                                    <h4 class="text-center mb-4" style="text-transform: italic;">Créer un compte chez nous!</h4>
                                     <form action="{{ route('NEWUSER') }}" method="POST" class="form-horizontal">
                                         @method('POST')
                                         @csrf
@@ -85,7 +85,7 @@
                                                 <select id="role" name="role" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box;">
                                                     <option value="USER">Utilisateur</option>
                                                     <option value="VENDEUR">Vendeur</option>
-                                                    <option value="ADMIN">Administrateur</option>
+                                                    <!-- <option value="ADMIN">Administrateur</option> -->
                                                 </select>
                                             </div>
                                         </div>

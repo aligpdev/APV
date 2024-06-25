@@ -1482,7 +1482,7 @@
                                 <a href="#">
                                     <img class="default-img" src="{{ asset('/articlesImages/' . $commerce->image)}}" alt="#" style="width: 300px; height: 300px; object-fit: cover;">
                                     <img class="hover-img" src="{{ asset('/articlesImages/' . $commerce->image)}}" alt="#" style="width: 300px; height: 300px; object-fit: cover;">
-                                    <span class="out-of-stock">Catégorie</span>
+                                    <span class="out-of-stock">{{ $commerce->categorie->produit_categorie}}</span>
                                 </a>
                                 <div class="button-head">
                                     <div class="product-action">
@@ -1651,7 +1651,7 @@
                                     </div>
                                 </div>
                                 <div class="quickview-stock">
-                                    <span><i class="fa fa-check-circle-o"></i> catégorie</span>
+                                    <span><i class="fa fa-check-circle-o"></i>{{ $commerce->categorie->produit_categorie}}</span>
                                 </div>
                             </div>
                             <h3>{{ $commerce->prix_produit }} €</h3>

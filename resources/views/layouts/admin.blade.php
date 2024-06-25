@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-
     <meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="keywords" content=""/>
@@ -16,7 +15,7 @@
 	<!-- PAGE TITLE HERE -->
 	<title>KAKUDAA - Admin</title>
 	<!-- FAVICONS ICON -->
-	<link href="admin/assets/images/favicon.png" rel="shortcut icon" type="image/png"/>
+	<link href="admin/assets/images/favicon_B.png" rel="shortcut icon" type="image/png"/>
 	<link href="admin/assets/vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet">
 	<link href="admin/assets/vendor/dotted-map/css/contrib/jquery.smallipop-0.3.0.min.css" type="text/css" media="all" rel="stylesheet"/>
 	<link href="admin/assets/vendor/owl-carousel/owl.carousel.css" rel="stylesheet">
@@ -28,7 +27,8 @@
 	<link href="admin/assets/vendor/swiper/css/swiper-bundle.min.css" rel="stylesheet">
     <link href="admin/assets/css/style.css" rel="stylesheet">
 	<!-- Sweet alert -->
-	<link href="admin/assets/vendor/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" referrerpolicy="no-referrer" />	<!-- Toastr CSS -->
 
 </head>
 
@@ -37,12 +37,12 @@
     <!--*******************
         Preloader start
     ********************-->
-    <div id="preloader">
+    <!-- <div id="preloader">
 		<div class="lds-ripple">
 			<div></div>
 			<div></div>
 		</div>
-    </div>
+    </div> -->
     <!--*******************
         Preloader end
     ********************-->
@@ -459,7 +459,12 @@
 	<script src="admin/assets/js/deznav-init.js"></script>
 	<script src="admin/assets/js/demo.js"></script>
     <script src="admin/assets/js/styleSwitcher.js"></script>
-	<script>
+
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+
+	
+	<!-- Toastr JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>	<script>
 		$(function () {
 			  $("#datepicker").datepicker({ 
 					autoclose: true, 
@@ -504,7 +509,7 @@
 		}
       });
 	</script>
-
+	@yield('scripts')
 </body>
 
 </html>

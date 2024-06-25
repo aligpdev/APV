@@ -63,3 +63,18 @@
             Content body end
         ***********************************-->
 @endsection
+
+@section('scripts')
+@if(Session::has('success'))
+<script>
+    toastr.success("{{ Session::get('success') }}", "Succès", {
+        positionClass: "toast-top-right",
+        closeButton: true,
+        progressBar: true,
+        timeOut: 5000,
+        extendedTimeOut: 2000,
+        tapToDismiss: false, // Optionnel : empêche la fermeture en cliquant sur la notification
+    });
+</script>
+@endif
+@endsection

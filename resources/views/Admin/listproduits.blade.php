@@ -20,13 +20,6 @@
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <div class="results">
-                                @if(Session::get('success'))
-                                    <div class="alert alert-success">
-                                        {{ Session::get('success') }}
-                                    </div>
-                                @endif
-                            </div>
                             <table id="example3" class="display" style="min-width: 845px">
                                 <thead>
                                     <tr>
@@ -52,7 +45,7 @@
                                             </div>
                                         </td>
                                         <td>{{ $commerce->nom_produit }}</td>
-                                        <td>{{ $commerce->produit_categorie}}</td>
+                                        <td>{{ $commerce->categorie->produit_categorie}}</td>
                                         <td class="text-truncate" style="max-width: 300px;">{{ $commerce->descript_produit}}.</td>
                                         <td>{{ $commerce->created_at->format('d-m-Y') }}</td>
                                         <td>{{ $commerce->prix_produit}}</td>
@@ -60,14 +53,24 @@
                                             <div class="d-flex">
                                                 <!-- Button trigger modal -->
                                                 <button type="button" class="btn btn-primary shadow btn-xs sharp me-1" data-toggle="modal" data-target="#modal{{ $commerce->id }}">
-                                                    <i class="fa fa-pencil"></i>
+                                                <i class="fas fa-pencil-alt"></i>
                                                 </button>
 
-                                                <form action="{{ route('SUPP-PRODUIT', $commerce->id) }}" method="POST" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cet produit ?');">
+                                                
+                                                <!-- <form id="form-{{ $commerce->id }}" action="{{ route('SUPP-PRODUIT', $commerce->id) }}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></button>
-                                                </form>
+                                                    <button onclick="confirmDelete('{{$commerce->id}}')" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></button>
+                                                </form> -->
+                                                <div class="remove">
+                                                    <button class="btn btn-sm btn-danger btn-xs sharp" onclick="confirmDelete('{{ $commerce->id }}')">
+                                                        <i class="fa fa-trash"></i>
+                                                    </button>
+                                                        <form id="form-{{ $commerce->id }}" action="{{route('SUPP-PRODUIT', $commerce->id) }}" method="post">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                        </form>
+                                                </div>
                                             </div>
                                         </td>
                                     </tr>
@@ -131,5 +134,38 @@
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+@endsection
 
+
+@section('scripts')
+<script>
+    function confirmDelete(commerceId) {
+        Swal.fire({
+            title: 'Êtes-vous sûr?',
+            text: 'Cette action est irréversible!',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Oui, supprimer!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Si l'utilisateur confirme, soumettre le formulaire de suppression
+                document.getElementById('form-' + commerceId).submit();
+            }
+        });
+    }
+</script>
+@if(Session::has('success'))
+<script>
+    toastr.success("{{ Session::get('success') }}", "Succès", {
+        positionClass: "toast-top-right",
+        closeButton: true,
+        progressBar: true,
+        timeOut: 5000,
+        extendedTimeOut: 2000,
+        tapToDismiss: false, // Optionnel : empêche la fermeture en cliquant sur la notification
+    });
+</script>
+@endif
 @endsection

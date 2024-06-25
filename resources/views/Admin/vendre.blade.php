@@ -23,13 +23,6 @@
                                     <form action="{{route('CREER-PRODUIT')}}" method="POST" enctype="multipart/form-data">
                                         @csrf
                                         @method('post')
-                                        <div class="results">
-                                            @if(Session::get('success'))
-                                                <div class="alert alert-success">
-                                                    {{ Session::get('success') }}
-                                                </div>
-                                            @endif
-                                        </div>
                                         <div class="row">
                                             <div class="mb-3 col-md-6">
                                                 <label class="form-label">Nom du produit</label>
@@ -53,7 +46,7 @@
                                             </div>
                                             <div class="mb-3">
 												<label class="form-label">Description du produit</label>
-												<textarea class="form-control" rows="4" name="descript_produit" id="descript_produit" required></textarea>
+												<textarea class="form-control" rows="4" name="descript_produit" id="descript_produit" placeholder="détails précis du produit" required></textarea>
 											</div>
 											<div class="mb-3">
 												<label for="formFileSm" class="form-label">Importer une image</label>
@@ -80,4 +73,19 @@
         <!--**********************************
             Content body end
         ***********************************-->
+@endsection
+
+@section('scripts')
+@if(Session::has('success'))
+<script>
+    toastr.success("{{ Session::get('success') }}", "Succès", {
+        positionClass: "toast-top-right",
+        closeButton: true,
+        progressBar: true,
+        timeOut: 5000,
+        extendedTimeOut: 2000,
+        tapToDismiss: false, // Optionnel : empêche la fermeture en cliquant sur la notification
+    });
+</script>
+@endif
 @endsection

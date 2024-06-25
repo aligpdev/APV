@@ -18,10 +18,11 @@ class CommerceController extends Controller
     }
 
     // Voir mes produits
-    public function voir_produits(){
-      $commerce  = Commerce::all()->where("user_id", Auth::user()->id);
-      return view('Admin.listproduits', compact('commerce'));
-    }
+    public function voir_produits() {
+      $categories = Categorie::all();
+      $commerce = Commerce::with('categorie')->where("user_id", Auth::user()->id)->get();
+      return view('Admin.listproduits', compact('commerce', 'categories'));
+  }
 
 
     // Créer un produit
