@@ -38,8 +38,7 @@
                                         <td>
                                             <div class="media d-flex align-items-center">
                                                 <div class="avatar avatar-xl me-2">
-                                                    <div class=""><img class="rounded-circle img-fluid"
-                                                            src="{{ asset('/articlesImages/' . $commerce->image)}}" width="30" alt="" />
+                                                    <div class=""><img class="rounded-circle img-fluid" src="{{ asset('/articlesImages/' . $commerce->image)}}" width="30" alt="" />
                                                     </div>
                                                 </div>
                                             </div>

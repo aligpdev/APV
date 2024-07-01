@@ -15,6 +15,8 @@ class Commerce extends Model
         'descript_produit',
         'idCategorie',
         'image',
+        'idTaille',
+        'idCouleur',
         'user_id'
     ];
 
@@ -23,9 +25,15 @@ class Commerce extends Model
     {
         return $this->belongsTo(Categorie::class, 'idCategorie');
     }
-    
-    public function comments(){
-        return $this->hasMany(Commentaire::class)->with('user');
+
+    public function taille()
+    {
+        return $this->belongsTo(Taille::class, 'idTaille');
+    }
+
+    public function couleur()
+    {
+        return $this->belongsTo(Couleur::class, 'idCouleur');
     }
 
     public function user(){

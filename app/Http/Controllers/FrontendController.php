@@ -15,11 +15,6 @@ class FrontendController extends Controller
 |--------------------------------------------------------------------------
 */
 
-    // Accéder a la page details d'un produit
-    public function details_produit(Commerce $commerce){
-        return view('Client.details', compact('commerce'));
-    }
-
     // Accéder à la page d'accueil
     public function home()
     {

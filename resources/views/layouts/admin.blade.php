@@ -28,7 +28,8 @@
     <link href="admin/assets/css/style.css" rel="stylesheet">
 	<!-- Sweet alert -->
 	<link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" referrerpolicy="no-referrer" />	<!-- Toastr CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@3.0.1/dist/css/multi-select-tag.css">
 
 </head>
 
@@ -324,7 +325,20 @@
 					<li>
 						<a href="{{route('VOIR-CATEGORIE')}}" aria-expanded="false">
 							<i class="flaticon-381-tab"></i>
+							
 							<span class="nav-text">Catégories de produits</span>
+						</a>
+                    </li>
+					<li>
+						<a href="{{route('VOIR-TAILLE')}}" aria-expanded="false">
+							<i class="fas fa-expand-arrows-alt"></i>
+							<span class="nav-text">Tailles de produits</span>
+						</a>
+                    </li>
+					<li>
+						<a href="{{route('VOIR-COULEUR')}}" aria-expanded="false">
+							<i class="fas fa-paint-brush"></i>
+							<span class="nav-text">Couleurs de produits</span>
 						</a>
                     </li>
 					<li>
@@ -459,12 +473,20 @@
 	<script src="admin/assets/js/deznav-init.js"></script>
 	<script src="admin/assets/js/demo.js"></script>
     <script src="admin/assets/js/styleSwitcher.js"></script>
-
+	<!-- sweet alert -->
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
-
-	
 	<!-- Toastr JS -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>	<script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<!-- input choix multiple -->
+	<script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@3.0.1/dist/js/multi-select-tag.js"></script>
+	<script>
+    	new MultiSelectTag('taille')  // id
+	</script>
+	<script>
+    	new MultiSelectTag('couleur')  // id
+	</script>
+	<!-- input choix multiple End-->
+	<script>
 		$(function () {
 			  $("#datepicker").datepicker({ 
 					autoclose: true, 

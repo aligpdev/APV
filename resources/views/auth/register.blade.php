@@ -83,7 +83,7 @@
                                             <div class="col-md-6">
                                                 <label class="mb-1"><strong>Type de compte</strong></label>
                                                 <select id="role" name="role" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box;">
-                                                    <option value="USER">Utilisateur</option>
+                                                    <option value="USER">Acheteur</option>
                                                     <option value="VENDEUR">Vendeur</option>
                                                     <!-- <option value="ADMIN">Administrateur</option> -->
                                                 </select>

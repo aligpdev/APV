@@ -6,24 +6,35 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Commerce;
 use App\Models\Categorie;
+use App\Models\Taille;
+use App\Models\Couleur;
 use App\Models\User;
 
 class CommerceController extends Controller
 {
+    public function ajouter_produit()
+    {
+        $categories = Categorie::all();
+        $tailles = Taille::all();
+        $couleurs = Couleur::all();
+        return view('Admin.vendre', compact('categories','tailles','couleurs'));
+    } 
 
     // Page de formulaire de vente
     public function voir_produits() {
       $categories = Categorie::all();
+      $tailles = Taille::all();
+      $couleurs = Couleur::all();
       
       if (Auth::user()->role === 'ADMIN') {
           // Si l'utilisateur a le rôle "ADMIN", afficher tous les produits
-          $commerce = Commerce::with('categorie')->get();
+          $commerce = Commerce::with('categorie','taille','couleur')->get();
       } else {
           // Sinon, afficher uniquement les produits de l'utilisateur connecté
-          $commerce = Commerce::with('categorie')->where('user_id', Auth::user()->id)->get();
+          $commerce = Commerce::with('categorie','taille','couleur')->where('user_id', Auth::user()->id)->get();
       }
   
-      return view('Admin.listproduits', compact('commerce', 'categories'));
+      return view('Admin.listproduits', compact('commerce', 'categories','tailles','couleurs'));
     }
 
 
@@ -35,6 +46,8 @@ class CommerceController extends Controller
           'prix_produit' => 'required|string',
           'descript_produit' => 'required|string',
           'idCategorie' => 'required|exists:categories,id',
+          'idTaille' => 'required|exists:tailles,id',
+          'idCouleur' => 'required|exists:couleurs,id',
           'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
       ]);
 
@@ -43,6 +56,8 @@ class CommerceController extends Controller
       $commerce->prix_produit = $request->input('prix_produit');
       $commerce->descript_produit = $request->input('descript_produit');
       $commerce->idCategorie = $request->input('idCategorie');
+      $commerce->idTaille = $request->input('idTaille');
+      $commerce->idCouleur = $request->input('idCouleur');
       $commerce->user_id = Auth::user()->id;
 
       if ($request->hasFile('image')) {
@@ -74,12 +89,11 @@ class CommerceController extends Controller
 
     // Mettre à jour un Produit
     public function update_produit(Request $request, $id)
-{
-    $request->validate([
-        'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Validation de l'image
-    ]);
-
-    $commerce = Commerce::find($id);
+    {
+      $request->validate([
+          'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Validation de l'image
+      ]);
+      $commerce = Commerce::find($id);
 
     if (!$commerce) {
         return back()->with('error', 'Produit non trouvé');
@@ -97,11 +111,18 @@ class CommerceController extends Controller
     $commerce->nom_produit = $request->input('nom_produit');
     $commerce->prix_produit = $request->input('prix_produit');
     $commerce->idCategorie = $request->input('idCategorie');
+    $commerce->idTaille = $request->input('idTaille');
+    $commerce->idCouleur = $request->input('idCouleur');
     $commerce->descript_produit = $request->input('descript_produit');
     $commerce->save();
 
     return back()->with('success', 'Produit modifié avec succès');
-}
+  }
 
-
+    // Accéder à la page paiement
+    public function details_produit(Commerce $commerce){
+        $tailles = Taille::all();
+        $couleurs = Couleur::all();
+        return view('Client.shopdetails', compact('commerce','tailles','couleurs'));
+    }
 }

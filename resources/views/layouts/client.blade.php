@@ -11,35 +11,35 @@
 	<!-- Title Tag  -->
   <title>KAKUDAA - site officiel</title>
 	<!-- Favicon -->
-	<link rel="icon" type="image/png" href="client/assets/images/favicon_B.png">
+	<link rel="icon" type="image/png" href="{{ asset('client/assets/images/favicon_B.png') }}">
 	<!-- Web Font -->
 	<link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
 	<!-- StyleSheet -->
 	
 	<!-- Bootstrap -->
-	<link rel="stylesheet" href="client/assets/css/bootstrap.css">
+	<link rel="stylesheet" href="{{ asset('client/assets/css/bootstrap.css') }}">
 	<!-- Magnific Popup -->
-  <link rel="stylesheet" href="client/assets/css/magnific-popup.min.css">
+  <link rel="stylesheet" href="{{ asset('client/assets/css/magnific-popup.min.css') }}">
 	<!-- Font Awesome -->
-  <link rel="stylesheet" href="client/assets/css/font-awesome.css">
+  <link rel="stylesheet" href="{{ asset('client/assets/css/font-awesome.css') }}">
 	<!-- Fancybox -->
-	<link rel="stylesheet" href="client/assets/css/jquery.fancybox.min.css">
+	<link rel="stylesheet" href="{{ asset('client/assets/css/jquery.fancybox.min.css') }}">
 	<!-- Themify Icons -->
-  <link rel="stylesheet" href="client/assets/css/themify-icons.css">
+  <link rel="stylesheet" href="{{ asset('client/assets/css/themify-icons.css') }}">
 	<!-- Nice Select CSS -->
-  <link rel="stylesheet" href="client/assets/css/niceselect.css">
+  <link rel="stylesheet" href="{{ asset('client/assets/css/niceselect.css') }}">
 	<!-- Animate CSS -->
-  <link rel="stylesheet" href="client/assets/css/animate.css">
+  <link rel="stylesheet" href="{{ asset('client/assets/css/animate.css') }}">
 	<!-- Flex Slider CSS -->
-  <link rel="stylesheet" href="client/assets/css/flex-slider.min.css">
+  <link rel="stylesheet" href="{{ asset('client/assets/css/flex-slider.min.css') }}">
 	<!-- Owl Carousel -->
-  <link rel="stylesheet" href="client/assets/css/owl-carousel.css">
+  <link rel="stylesheet" href="{{ asset('client/assets/css/owl-carousel.css') }}">
 	<!-- Slicknav -->
-  <link rel="stylesheet" href="client/assets/css/slicknav.min.css">
+  <link rel="stylesheet" href="{{ asset('client/assets/css/slicknav.min.css') }}">
 	<!-- Eshop StyleSheet -->
-	<link rel="stylesheet" href="client/assets/css/reset.css">
-	<link rel="stylesheet" href="client/assets/css/style.css">
-  <link rel="stylesheet" href="client/assets/css/responsive.css">
+	<link rel="stylesheet" href="{{ asset('client/assets/css/reset.css') }}">
+	<link rel="stylesheet" href="{{ asset('client/assets/css/style.css') }}">
+  <link rel="stylesheet" href="{{ asset('client/assets/css/responsive.css') }}">
   <style>
         .shop-home-list .row {
             display: flex;
@@ -74,7 +74,8 @@
             max-width: 100%;
             height: auto;
             display: block;
-            border-radius:
+            border-radius: 50%;
+        }
 
         .shop-home-list .buy {
             position: absolute;
@@ -88,9 +89,7 @@
             text-decoration: none; /* Pour enlever le soulignement du lien */
         }
     </style>
-	
 </head>
-
 
 <body class="js">
 
@@ -121,14 +120,15 @@
               <div class="col-lg-8 col-md-12 col-12">
                 <div class="right-content">
                   <ul class="list-main">
-                    <li><i class="ti-location-pin"></i> Adresse</li>
+                  <li><i class="ti-alarm-clock"></i> <a href="#">Disponible</a></li>
+                    <li><i class="ti-location-pin"></i> Lomé - TOGO</li>
                     @if(Session::get('UserId'))
                     <li style="background-color: #ffecb3; padding: 10px; border-radius: 30px; text-align: center; display: inline-block;">
                       <i class="ti-user" style="vertical-align: middle;"></i>
                       <a href="{{route('TABLEAU')}}" style="color: #000; text-decoration: none; vertical-align: middle; margin-left: 5px;">Mon compte</a>
                     </li>
                     @else
-                    <li><i class="ti-user"></i><a href="{{route('page-login')}}">Se connecter</a></li>
+                    <li><i class="ti-user"></i><a href="{{route('page-register')}}"><b>INSCRIPTION</b></a></li>
                     @endif
                   </ul>
                 </div>
@@ -141,7 +141,7 @@
             <div class="row">
               <div class="col-lg-2 col-md-2 col-12">
                 <div class="logo">
-                  <a href="{{route('ACCUEIL')}}"><img src="client/assets/images/logo.png" alt="logo"></a>
+                  <a href="{{route('ACCUEIL')}}"><img src="{{ asset('client/assets/images/logo.png') }}" alt="logo"></a>
                 </div>
                 <div class="search-top">
                   <div class="top-search"><a href="#0"><i class="ti-search"></i></a></div>
@@ -166,7 +166,7 @@
                     <a href="#" class="single-icon"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
                   </div>
                   <div class="sinlge-bar">
-                    <a href="#" class="single-icon"><i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
+                    <a href="{{route('page-login')}}" class="single-icon"><i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
                   </div>
                   <div class="sinlge-bar shopping">
                     <a href="{{route('PANIER')}}" class="single-icon"><i class="ti-shopping-cart"></i> <span class="total-count">2</span></a>
@@ -209,9 +209,7 @@
       </header>
     <!--/ End Header -->
 
-
     @yield('content')
-
 
     <!-- Start Footer Area -->
       <footer class="footer">
@@ -221,7 +219,7 @@
               <div class="col-lg-5 col-md-6 col-12">
                 <div class="single-footer about">
                   <div class="logo">
-                    <a href="{{route('ACCUEIL')}}"><img src="client/assets/images/logo2.png" alt="#"></a>
+                    <a href="{{route('ACCUEIL')}}"><img src="{{ asset('client/assets/images/logo2.png') }}" alt="#"></a>
                   </div>
                   <p class="text">Praesent dapibus, neque id cursus ucibus, tortor neque egestas augue,  magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</p>
                   <p class="call">Des questions ? Ecrivez-nous 24h/24 et 7j/7<span><a href="tel:123456789">(+228) 90112233</a></span></p>
@@ -281,7 +279,7 @@
                 </div>
                 <div class="col-lg-6 col-12">
                   <div class="right">
-                    <img src="client/assets/images/payments.png" alt="#">
+                    <img src="{{ asset('client/assets/images/payments.png') }}" alt="#">
                   </div>
                 </div>
               </div>
@@ -291,43 +289,42 @@
       </footer>
     <!-- /End Footer Area -->
 
-
   <!-- Jquery -->
-  <script src="client/assets/js/jquery.min.js"></script>
-  <script src="client/assets/js/jquery-migrate-3.0.0.js"></script>
-	<script src="client/assets/js/jquery-ui.min.js"></script>
+  <script src="{{ asset('client/assets/js/jquery.min.js') }}"></script>
+  <script src="{{ asset('client/assets/js/jquery-migrate-3.0.0.js') }}"></script>
+	<script src="{{ asset('client/assets/js/jquery-ui.min.js') }}"></script>
 	<!-- Popper JS -->
-	<script src="client/assets/js/popper.min.js"></script>
+	<script src="{{ asset('client/assets/js/popper.min.js') }}"></script>
 	<!-- Bootstrap JS -->
-	<script src="client/assets/js/bootstrap.min.js"></script>
+	<script src="{{ asset('client/assets/js/bootstrap.min.js') }}"></script>
 	<!-- Color JS -->
-	<script src="client/assets/js/colors.js"></script>
+	<script src="{{ asset('client/assets/js/colors.js') }}"></script>
 	<!-- Slicknav JS -->
-	<script src="client/assets/js/slicknav.min.js"></script>
+	<script src="{{ asset('client/assets/js/slicknav.min.js') }}"></script>
 	<!-- Owl Carousel JS -->
-	<script src="client/assets/js/owl-carousel.js"></script>
+	<script src="{{ asset('client/assets/js/owl-carousel.js') }}"></script>
 	<!-- Magnific Popup JS -->
-	<script src="client/assets/js/magnific-popup.js"></script>
+	<script src="{{ asset('client/assets/js/magnific-popup.js') }}"></script>
 	<!-- Waypoints JS -->
-	<script src="client/assets/js/waypoints.min.js"></script>
+	<script src="{{ asset('client/assets/js/waypoints.min.js') }}"></script>
 	<!-- Countdown JS -->
-	<script src="client/assets/js/finalcountdown.min.js"></script>
+	<script src="{{ asset('client/assets/js/finalcountdown.min.js') }}"></script>
 	<!-- Nice Select JS -->
-	<script src="client/assets/js/nicesellect.js"></script>
+	<script src="{{ asset('client/assets/js/nicesellect.js') }}"></script>
 	<!-- Flex Slider JS -->
-	<script src="client/assets/js/flex-slider.js"></script>
+	<script src="{{ asset('client/assets/js/flex-slider.js') }}"></script>
 	<!-- ScrollUp JS -->
-	<script src="client/assets/js/scrollup.js"></script>
+	<script src="{{ asset('client/assets/js/scrollup.js') }}"></script>
 	<!-- Onepage Nav JS -->
-	<script src="client/assets/js/onepage-nav.min.js"></script>
+	<script src="{{ asset('client/assets/js/onepage-nav.min.js') }}"></script>
 	<!-- Easing JS -->
-	<script src="client/assets/js/easing.js"></script>
+	<script src="{{ asset('client/assets/js/easing.js') }}"></script>
 	<!-- Active JS -->
-	<script src="client/assets/js/active.js"></script>
+	<script src="{{ asset('client/assets/js/active.js') }}"></script>
   <!-- Ytplayer JS -->
-	<script src="client/assets/js/ytplayer.min.js"></script>
+	<script src="{{ asset('client/assets/js/ytplayer.min.js') }}"></script>
   <!-- Fancybox JS -->
-	<script src="client/assets/js/facnybox.min.js"></script>
+	<script src="{{ asset('client/assets/js/facnybox.min.js') }}"></script>
 
   <!-- @stack('send')
   @stack('message') -->
