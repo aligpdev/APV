@@ -18,16 +18,22 @@
 	
 	<!-- Bootstrap -->
 	<link rel="stylesheet" href="{{ asset('client/assets/css/bootstrap.css') }}">
-	<!-- Magnific Popup -->
+  <!-- Magnific Popup -->
+  <link rel="stylesheet" href="{{ asset('client/assets/css/magnific-popup.css') }}">
+	<!-- Magnific Popup min -->
   <link rel="stylesheet" href="{{ asset('client/assets/css/magnific-popup.min.css') }}">
 	<!-- Font Awesome -->
   <link rel="stylesheet" href="{{ asset('client/assets/css/font-awesome.css') }}">
 	<!-- Fancybox -->
 	<link rel="stylesheet" href="{{ asset('client/assets/css/jquery.fancybox.min.css') }}">
+  <!-- Jquery ui -->
+	<link rel="stylesheet" href="{{ asset('client/assets/css/jquery-ui.css') }}">
 	<!-- Themify Icons -->
   <link rel="stylesheet" href="{{ asset('client/assets/css/themify-icons.css') }}">
 	<!-- Nice Select CSS -->
   <link rel="stylesheet" href="{{ asset('client/assets/css/niceselect.css') }}">
+  <!-- Nice-Select CSS -->
+  <link rel="stylesheet" href="{{ asset('client/assets/css/nice-select.css') }}">
 	<!-- Animate CSS -->
   <link rel="stylesheet" href="{{ asset('client/assets/css/animate.css') }}">
 	<!-- Flex Slider CSS -->
@@ -36,6 +42,10 @@
   <link rel="stylesheet" href="{{ asset('client/assets/css/owl-carousel.css') }}">
 	<!-- Slicknav -->
   <link rel="stylesheet" href="{{ asset('client/assets/css/slicknav.min.css') }}">
+  <!-- Responsive -->
+  <link rel="stylesheet" href="{{ asset('client/assets/css/responsive.css') }}">
+  <!-- Reset -->
+  <link rel="stylesheet" href="{{ asset('client/assets/css/reset.css') }}">
 	<!-- Eshop StyleSheet -->
 	<link rel="stylesheet" href="{{ asset('client/assets/css/reset.css') }}">
 	<link rel="stylesheet" href="{{ asset('client/assets/css/style.css') }}">
@@ -297,8 +307,6 @@
 	<script src="{{ asset('client/assets/js/popper.min.js') }}"></script>
 	<!-- Bootstrap JS -->
 	<script src="{{ asset('client/assets/js/bootstrap.min.js') }}"></script>
-	<!-- Color JS -->
-	<script src="{{ asset('client/assets/js/colors.js') }}"></script>
 	<!-- Slicknav JS -->
 	<script src="{{ asset('client/assets/js/slicknav.min.js') }}"></script>
 	<!-- Owl Carousel JS -->
@@ -325,6 +333,8 @@
 	<script src="{{ asset('client/assets/js/ytplayer.min.js') }}"></script>
   <!-- Fancybox JS -->
 	<script src="{{ asset('client/assets/js/facnybox.min.js') }}"></script>
+  <!-- Map-script JS -->
+	<script src="{{ asset('client/assets/js/map-script.js') }}"></script>
 
   <!-- @stack('send')
   @stack('message') -->
